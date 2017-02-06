@@ -3,7 +3,7 @@ Intermediate Javascript Assessment
 
 Your job, is to complete each problem in javascript so that the tests in SpecRunner.html pass.
 
-Open up SpecRunner.html in your browser to see which tests are passing and failing. As you write the answers in assessment.js, the tests will pass.
+Open up index.html in your browser to see which tests are passing and failing. As you write the answers in assessment.js, the tests will pass.
 
 Read questions.md to see each problem you must solve.
 
