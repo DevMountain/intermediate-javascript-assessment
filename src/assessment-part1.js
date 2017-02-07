@@ -5,4 +5,4 @@
 // Type checking
 // Prototypes
 
-var thing1 = 'thing1';
+var item1 = 'thing1';
