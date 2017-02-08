@@ -1,7 +1,19 @@
 describe('Part 2:', function() {
-  describe('Item2', function() {
-    it('should be a "thing"', function() {
-      expect(item2).toEqual('thing2');
-    });
-  });
+
+  describe('Accountant', function() {
+
+    it('accountingOffice should exist', function() {
+      expect(accountingOffice).toEqual(jasmine.any(Function));
+    })
+
+    it('accountingOffice should return accountant', function() {
+      expect(accountingOffice()).toEqual(jasmine.any(Function))
+    })
+
+    it('assets and liabilities', function() {
+      var acc = accountingOffice(100);
+      expect(acc(-100)).toEqual(0);
+    })
+
+  })
 });
