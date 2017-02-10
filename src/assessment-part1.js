@@ -9,6 +9,6 @@ var item1 = 'thing1';
 
 function handleIt(promise) {
   promise .then(function(response) {
-    
+
   });
 }
