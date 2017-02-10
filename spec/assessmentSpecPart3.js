@@ -1,5 +1,6 @@
 describe('Part 3:', function() {
 
+
   describe('callBinding', function() {
 
     beforeEach(function() {
@@ -41,7 +42,7 @@ describe('Part 3:', function() {
     });
 
     var updatedObj = applyBinding(bindObjectArray, binding.apply, 1);
-    
+
     it('should return an object', function() {
       expect(updatedObj).toEqual(jasmine.any(Object));
     });
