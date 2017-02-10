@@ -73,7 +73,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear"];
 // PROBLEM 2
 // **
 
-// Write a constructor function called Vehicle.  Vehicle should have a single property called gasLeft that is equal to 100.  
+// Write a constructor function called Vehicle.  Vehicle should have a property called gasLeft that is equal to 100.  
 
 // Next, assign a function called drive to the Vehicle prototype.  When invoked, drive should subtract 25 from the gasLeft property of any Vehicle your constructor function creates.
 
@@ -110,34 +110,60 @@ mustang.drive()
 // PROBLEM 3
 // **
 
-// For this problem, your job is to add a method called "tripleSum" to the Array prototype.  When called on an array, "tripleSum" will, predictably, triple the value at each index and then return the sum of those values.  Your function should account for numbers passed in as strings.
+// For this problem, you will need to add a method to the String prototype named "grammarPolice".  When called on a string, "grammarPolice" will capitalize the first letter of every word, while reverting the remainder of each word to lowercase. (E.G. "OH HELLO THERE" becomes "Oh Hello There")
+// Your method may be passed punctuation, numbers or other non-letter characters and should neither modify them nor break when encountering them.
 
 // Code Here
 
-Array.prototype.tripleSum = function(){
-  this.forEach(function(e, i, a){a[i] = (e * 1) * 3})
-  return this.reduce(function(a, b){return a + b})
+String.prototype.grammarPolice = function(){
+  var stringArr = this.split(' ')
+  stringArr.forEach(function(e,i,a){a[i] = e.charAt(0).toUpperCase() + e.slice(1, e.length).toLowerCase()})
+  var properString = stringArr.join(' ')
+  return properString
 }
+
+
 
 // -----------------------------------------------------------------------------
 
 // **
 // PROBLEM 4
 // **
-// TYPE CHECKING
-// #12  ###################
-// # Type checking
-// Write a function called compareValues that takes in 2 parameters.
-// If both parameters are the same type and the same value return "Exact match".
-// If both parameters have the same value but are different types return "Different types".
-// Otherwise return "Different values".
 
-// Type checking
+// Write a function called valueType that has two parameters. Jasmine will pass arguments into your function through the parameters.  Your function will need to compare the passed-in values and return a string based on that comparison, as follows:
+
+// If the arguments are of the same type and have the same value, return "Exactly the same"
+
+// If the arguments have the same value but are of different types, return "Same value, different types"
+
+// In all other cases, return "Different values"
+
+// Code Here
+
+function valueType(val1, val2){
+  if(val1 === val2){
+    return "Exactly the same"
+  }
+  else if (val1 == val2){
+    return "Same value, different types"
+  }
+  else {
+    return "Different values"
+  }
+}
+
 // -----------------------------------------------------------------------------
 
 // **
 // PROBLEM 5
 // **
-// THIS CHAINING
 
-// Using an existing promise (were checking for use of .then and a callback)
+// Write a function called "promiseCatcher" that will take in a single argument, which will be passed in by Jasmine.  That argument will be a promise, and inside your function you will need to catch that promise and manipulate it so that your function returns the promise's value when the promise is resolved.
+
+// Code Here
+
+function promiseCatcher(promise){
+  promise.then(function(response){
+    return response
+  })
+}
