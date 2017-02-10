@@ -72,14 +72,69 @@ var users = [{
     }
 ];
 
+var emails = [
+	"awilliams0@intel.com",
+	"vbailey1@freewebs.com",
+	"tpeters2@yelp.com",
+	"thunter3@sourceforge.net",
+	"ldixon4@ask.com",
+	"rgordon5@adobe.com",
+	"lcampbell6@msu.edu",
+	"barmstrong7@hugedomains.com",
+	"jmorgan8@desdev.cn",
+	"shamilton9@oracle.com"
+];
 
-var $http = function(obj) {
+// Fake $http for promise tests
+var $http = function(request) {
 	var defered = $q.defer();
 
+	if (request.url !== '/api/users' || request.method !== "GET") {
+		defered.resolve('request Failed');
+	}
+
 	setTimeout(function() {
-		defered.resolve(users);
+		defered.resolve({data: users});
 	}, 1000);
 
 	return defered.promise;
 };
-$http.get = $http;
+$http.get = function(url) {
+	var defered = $q.defer();
+
+	if (url !== '/api/users') {
+		defered.resolve('request Failed');
+	}
+
+	setTimeout(function() {
+		defered.resolve({data: users});
+	}, 1000);
+
+	return defered.promise;
+};
+
+// Binding function and object for binding problems
+var bindObjectArray = [{
+	id: 1,
+	name: 'Unicorn',
+	ability: 'Sparkles',
+	favorites: ['Waffles', 'Butterflys']
+}, {
+	id: 2,
+	name: 'Dragon',
+	ability: 'Fire',
+	favorites: ['Burninating', 'Red Meat']
+}];
+
+var binding = {
+	call: function(name) {
+		this.name = name;
+		return this;
+	},
+	apply: function() {
+		for (var i = 0; i < arguments.length; i++) {
+			this.favorites.push(arguments[i]);
+		}
+		return this;
+	}
+}
