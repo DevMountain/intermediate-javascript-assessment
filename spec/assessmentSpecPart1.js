@@ -91,7 +91,7 @@ describe('Part 1:', function(){
       expect(methodWorkingFine).toBe(true);
     })
   })
-  describe('Mustang', function(){
+  describe('mustang', function(){
     it('should be an object', function(){
       expect(mustang).toEqual(jasmine.any(Object));
     })
@@ -112,7 +112,7 @@ describe('Part 1:', function(){
       expect(enoughGasLeft).toEqual(true)
     })
   })
-  describe('Charger', function(){
+  describe('charger', function(){
     it('should be an object', function(){
       expect(charger).toEqual(jasmine.any(Object));
     })
