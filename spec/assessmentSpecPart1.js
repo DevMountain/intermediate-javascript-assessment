@@ -1,4 +1,4 @@
-describe('Problem 1:', function() {
+describe('Part 1:', function(){
   describe('fairyTale1', function() {
     it('should be an array', function() {
       expect(fairyTale1).toEqual(jasmine.any(Array));
@@ -64,9 +64,7 @@ describe('Problem 1:', function() {
       expect(correctSolution).toBe(true);
     });
   });
-});
 
-describe('Problem 2:', function(){
   describe('Vehicle', function(){
     it('should be a constructor function', function(){
       expect(new Vehicle).toEqual(jasmine.any(Object));
@@ -135,9 +133,7 @@ describe('Problem 2:', function(){
       expect(enoughGasLeft).toBe(true)
     })
   })  
-})
 
-describe("Problem 3:", function(){
   describe("grammarPolice", function(){
     it("should be a method on the String prototype", function(){
       expect(String.prototype.grammarPolice).toEqual(jasmine.any(Function))
@@ -159,9 +155,7 @@ describe("Problem 3:", function(){
       expect(lessOffensive).toBe(true)
     })
   })
-})
 
-describe("Problem 4:", function(){
   describe("valueType", function(){
     it("should be a function", function(){
       expect(valueType).toEqual(jasmine.any(Function))
@@ -185,9 +179,7 @@ describe("Problem 4:", function(){
       expect(passInequality).toBe(true)
     })
   })
-})
 
-describe("Problem 5:", function(){
   describe("promiseCatcher", function(){
     it("should be a function", function(){
       expect(promiseCatcher).toEqual(jasmine.any(Function))
@@ -204,7 +196,7 @@ describe("Problem 5:", function(){
       }
       
       promiseCatcher(deepThought($q))
-  
+
         setTimeout(function(){
           var towel = false
           if(theAnswer === 42){
@@ -217,4 +209,3 @@ describe("Problem 5:", function(){
     })
   })
 })
-
