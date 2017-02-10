@@ -1,3 +1,4 @@
+
 // PROBLEM 12 (Explicit Binding)
 // For this question, you are asked to make a function called 'callBinding'.
 // This function will take in 3 parameters.
@@ -83,3 +84,4 @@ function emailList($q, $http) {
 
 	return defered.promise;
 }
+

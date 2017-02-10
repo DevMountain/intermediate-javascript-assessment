@@ -1,6 +1,4 @@
-// Chaining .thens
-// Context - .bind
-// Closures
+
 
 //PROBLEM 1 (Chaining)
 
