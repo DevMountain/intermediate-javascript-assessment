@@ -1,5 +1,32 @@
 describe('Part 2:', function() {
 
+  describe('No weak link', function() {
+
+    it('one and two are undefined before function call', function() {
+      expect(one).toEqual('don\'t change this string!');
+      expect(two).toEqual('don\'t change this string, either!');
+    })
+
+    it('change variable values', function(done) {
+
+      noWeakLink().then(function(res) {
+        expect(one.id).toEqual(users[0].id)
+        expect(two.id).toEqual(users[2].id)
+        expect(res).toEqual(users[9]);
+        done();
+      })
+    })
+
+  })
+
+  describe('Horton', function() {
+
+    it('tester fn', function() {
+      expect(large.bind(elephant) + '').toEqual(boundToElephant + '')
+    })
+
+  })
+
   describe('accountant', function() {
 
     it('accountingOffice should exist', function() {
@@ -47,6 +74,10 @@ describe('Part 2:', function() {
   })
 
   describe('frodo', function() {
+
+    it('should exist', function() {
+      expect(frodo).toEqual(jasmine.any(Function));
+    })
 
     it('should return object with two methods', function() {
       expect(frodo()).toEqual(jasmine.any(Object));
