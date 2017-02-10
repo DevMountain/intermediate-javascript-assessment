@@ -109,10 +109,15 @@ mustang.drive()
 // **
 // PROBLEM 3
 // **
-// Prototypes
-// #8  ###################
-// # Prototype 1
-// Add a prototype function to the Array type that doubles the value of every item in the array and returns the modified array.
+
+// For this problem, your job is to add a method called "tripleSum" to the Array prototype.  When called on an array, "tripleSum" will, predictably, triple the value at each index and then return the sum of those values.  Your function should account for numbers passed in as strings.
+
+// Code Here
+
+Array.prototype.tripleSum = function(){
+  this.forEach(function(e, i, a){a[i] = (e * 1) * 3})
+  return this.reduce(function(a, b){return a + b})
+}
 
 // -----------------------------------------------------------------------------
 

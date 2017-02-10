@@ -134,6 +134,29 @@ describe('Problem 2:', function(){
       }
       expect(enoughGasLeft).toEqual(true)
     })
+  })  
+})
+
+describe('Problem 3:', function(){
+  describe('tripleSum', function(){
+    it('should be a method on the Array prototype', function(){
+      expect(Array.prototype.tripleSum).toEqual(jasmine.any(Function))
+    })
+    it('should triple each index of an array, then return the sum', function(){
+      var testArray = [7,4,3].tripleSum()
+      var workingRight = false
+      if(testArray == 42){
+        workingRight = true;
+      }
+      expect(workingRight).toBe(true);
+    })
+    it('should account for numbers passed in as strings', function(){
+      var testArray = ['2', 9, '3'].tripleSum()
+      var workingRight = false
+      if(testArray == 42){
+        workingRight = true;
+      }
+      expect(workingRight).toBe(true);
+    })
   })
-    
 })
