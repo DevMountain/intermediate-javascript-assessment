@@ -2,12 +2,12 @@ describe('Part 2:', function() {
 
   describe('No weak link', function() {
 
-    it('one and two are undefined before function call', function() {
-      expect(one).toEqual('don\'t change this string!');
-      expect(two).toEqual('don\'t change this string, either!');
+    it('one and two are unchanged before function call', function() {
+      expect(one).toEqual('don\'t touch this string!');
+      expect(two).toEqual('don\'t touch this string, either!');
     })
 
-    it('change variable values', function(done) {
+    it('should change variable values', function(done) {
 
       noWeakLink().then(function(res) {
         expect(one.id).toEqual(users[0].id)
@@ -19,10 +19,36 @@ describe('Part 2:', function() {
 
   })
 
+  describe('Deathstar', function() {
+
+    it('should exist', function() {
+      expect(deathStar).toEqual(jasmine.any(Function))
+    })
+
+    it('should return function with correct context', function() {
+      var crew = { workerPopulation: 342953 }
+      var capacity = function() {
+      	return { crew: this.workerPopulation }
+      }
+      var crewPop = deathStar(capacity, crew);
+      var crewPopCall = crewPop();
+      expect(crewPopCall.crew).toEqual(342953)
+      expect(deathStar(capacity, crew)).toEqual(jasmine.any(Function));
+      expect(crewPop()).toEqual(jasmine.any(Object))
+    })
+
+
+  })
+
   describe('Horton', function() {
 
-    it('tester fn', function() {
+    it('explicit binding used', function() {
+      expect(large()).toEqual('My name is  and I am very heavy!')
       expect(large.bind(elephant) + '').toEqual(boundToElephant + '')
+    })
+
+    it('boundToElephant should return correct string', function() {
+      expect(boundToElephant()).toEqual('My name is Horton and I am very heavy!')
     })
 
   })
