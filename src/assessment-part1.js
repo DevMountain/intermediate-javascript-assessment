@@ -158,12 +158,12 @@ function valueType(val1, val2){
 // PROBLEM 5
 // **
 
-// Write a function called "promiseCatcher" that will take in a single argument, which will be passed in by Jasmine.  That argument will be a promise, and inside your function you will need to catch that promise and manipulate it so that your function returns the promise's value when the promise is resolved.
+// Write a function called "promiseCatcher" that will take in a single argument, which will be passed in by Jasmine.  That argument will be a promise, and inside your function you will need to catch that promise and return the promise's value when the promise is resolved.
 
 // Code Here
 
 function promiseCatcher(promise){
-  promise.then(function(response){
+  return promise.then(function(response){
     return response
   })
 }
