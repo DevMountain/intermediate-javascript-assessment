@@ -192,77 +192,28 @@ describe("Problem 5:", function(){
     it("should be a function", function(){
       expect(promiseCatcher).toEqual(jasmine.any(Function))
     })
-    it("")
-    it("should catch a promise, then return its value", function(done){
-      var hobbitsTale = "Burglar in training"
-      var ringBearer;
+    it("should catch a promise, then set its value to 'theAnswer'", function(done){
       
-      function crossedFingers ($q){
+      function deepThought ($q){
         var deferred = $q.defer();
         setTimeout(function(){
-          hobbitsTale = "There and back again"
-          deferred.resolve(hobbitsTale)
+          var lifeUniverseEverything = 42
+          deferred.resolve(lifeUniverseEverything)
         }, 200);
         return deferred.promise
       }
       
-      if(promiseCatcher(crossedFingers($q))){
-        promiseCatcher(crossedFingers($q)).then(function(response){
-          ringBearer = response
-        })
+      promiseCatcher(deepThought($q))
   
         setTimeout(function(){
-          expect(ringBearer).toEqual("There and back again")
+          var towel = false
+          if(theAnswer === 42){
+            towel = true
+          }
+          expect(towel).toBe(true)
           done()
-        }, 1000)
-      }
-      
-      
-      
-      // var foo;
-      // // CODE HERE...
-      // function promiseMe($q) {
-      // 	var defered = $q.defer();
-      // 
-      // 	setTimeout(function() {
-      // 		foo = 'bar'
-      // 		defered.resolve(foo);
-      // 	}, 2000);
-      // 
-      // 	return defered.promise;
-      // }
-      
-      
-      
-      // describe('promiseMe', function() {
-      // 
-    	// 	it('should be a function', function() {
-    	// 		expect(promiseMe)
-    	// 			.toEqual(jasmine.any(Function));
-    	// 	});
-      // 
-    	// 	var promise = promiseMe($q);
-      // 
-    	// 	it('should return a promise', function() {
-    	// 		expect(promise.then)
-    	// 			.toEqual(jasmine.any(Function));
-    	// 	});
-      // 
-    	// 	it('should not change foo before timeout runs', function() {
-    	// 		expect(foo)
-    	// 			.toBe(undefined);
-    	// 	});
-      // 
-    	// 	it('should change foo to \'bar\' on timeout', function(done) {
-    	// 		promise
-    	// 			.then(function(response) {
-    	// 				expect(foo)
-    	// 					.toEqual('bar');
-    	// 				done();
-    	// 			});
-    	// 	});
-      // 
-    	// });
+        }, 500)
+
     })
   })
 })
