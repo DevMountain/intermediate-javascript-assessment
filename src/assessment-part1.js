@@ -111,14 +111,16 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // Code Here
 
 
+
 // -----------------------------------------------------------------------------
 
 // **
 // PROBLEM 5
 // **
 
-// Write a function called "promiseCatcher" that will take in a promise, which will be passed in by Jasmine.  Your function will need to catch that promise, then set the resolved value of that promise to the global variable called "theAnswer".
+// Write a function called "promiseCatcher" that will take in a promise, passed in by Jasmine through your function's parameters.  Your function will need to catch that promise, then set the global variable 'theAnswer' equal to the result of the promise.
 
 var theAnswer = "Unknown"
 
 // Code Here
+
