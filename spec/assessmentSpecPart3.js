@@ -57,25 +57,29 @@ describe('Part 3:', function() {
   });
 
 	describe('promiseMe', function() {
-
 		it('should be a function', function() {
 			expect(promiseMe)
 				.toEqual(jasmine.any(Function));
 		});
 
-		var promise = promiseMe($q);
-
 		it('should return a promise', function() {
+  		var promise = promiseMe($q);
 			expect(promise.then)
 				.toEqual(jasmine.any(Function));
+      promise
+        .then(function(response) {
+          foo = undefined;
+        });
 		});
 
 		it('should not change foo before timeout runs', function() {
+		  var promise = promiseMe($q);
 			expect(foo)
 				.toBe(undefined);
 		});
 
-		it('should change foo to \'bar\' on timeout', function(done) {
+		it("should change foo to 'bar' on timeout", function(done) {
+		  var promise = promiseMe($q);
 			promise
 				.then(function(response) {
 					expect(foo)
@@ -93,6 +97,7 @@ describe('Part 3:', function() {
 				.toEqual(jasmine.any(Function));
     });
 
+    var $q = Q;
     var promise = emailList($q, $http);
 
     it('should return a promise', function() {
@@ -112,4 +117,3 @@ describe('Part 3:', function() {
 	});
 
 });
-

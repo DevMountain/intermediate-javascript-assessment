@@ -1,4 +1,3 @@
-
 // PROBLEM 12 (Explicit Binding)
 // For this question, you are asked to make a function called 'callBinding'.
 // This function will take in 3 parameters.
@@ -7,14 +6,13 @@
 // with the context of the animal, and 'Trogdor' as a parameter.
 
 // CODE HERE...
-function callBinding(magicAnimals, updateAnimal, id) {
-	for (var i = 0; i < magicAnimals.length; i++) {
-		if (magicAnimals[i].id == id) {
-			return updateAnimal.call(magicAnimals[i], 'Trogdor');
-		}
-	}
+function callBinding(animals, update, id) {
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i].id === id) {
+      return update.call(animals[i], 'Trogdor');
+    }
+  }
 }
-
 
 
 // PROBLEM 13 (Explicit Binding)
@@ -25,39 +23,37 @@ function callBinding(magicAnimals, updateAnimal, id) {
 // with the context of the animal, and ['being majestic', 'eating rainbows'] as a parameter.
 
 // CODE HERE...
-function applyBinding(magicAnimals, updateAnimal, id) {
-	for (var i = 0; i < magicAnimals.length; i++) {
-		if (magicAnimals[i].id == id) {
-			return updateAnimal.apply(magicAnimals[i], ['being majestic', 'eating rainbows']);
-		}
-	}
+function applyBinding(animals, update, id) {
+  for (var i = 0; i < animals.length; i++) {
+    if (animals[i].id === id) {
+      return update.apply(animals[i], ['being majestic', 'eating rainbows']);
+    }
+  }
 }
 
 
-
-// PROBLEM 14 (Custom Promises) - $q is an injected library that works like the angular one
+// PROBLEM 14 (Custom Promises) - :NOTE $q is an injected library that works like the angular one
 // For this question, you are asked to make a function called 'promiseMe'.
 // This function will take in 1 parameter.
 // ($q<Custom promise object>)
-// Create a custom promise, then in a time out, update the variable foo (seen below)
+// In your function, create a custom promise, then in a time out, update the variable foo (seen below)
 // to 'bar' and complete your promise.
 
 var foo;
 // CODE HERE...
 function promiseMe($q) {
-	var defered = $q.defer();
+  var def = $q.defer();
 
-	setTimeout(function() {
-		foo = 'bar'
-		defered.resolve(foo);
-	}, 2000);
+  setTimeout(function() {
+    foo = 'bar';
+    def.resolve(foo)
+  }, 1);
 
-	return defered.promise;
+  return def.promise;
 }
 
 
-
-// PROBLEM 15 (Custom Promises) - $http is a function created to simulate the angular $http.
+// PROBLEM 15 (Custom Promises) - :NOTE $http is a function created to simulate the angular $http.
 // For this question, you are asked to make a function called 'emailList'.
 // This function will take in 2 parameters.
 // ($q<Custom promise object>, $http<Custom request function>)
@@ -68,20 +64,18 @@ function promiseMe($q) {
 
 // CODE HERE...
 function emailList($q, $http) {
-	var defered = $q.defer();
+  var def = $q.defer();
 
-	$http({
-		method: 'GET',
-		url: '/api/users'
-	})
-	.then(function(response) {
-    var emails = []
+  $http({
+    method: 'GET',
+    url: '/api/users'
+  }).then(function(response) {
+    var emails = [];
     for (var i = 0; i < response.data.length; i++) {
       emails.push(response.data[i].email);
     }
-		defered.resolve(emails);
-	});
+    def.resolve(emails);
+  });
 
-	return defered.promise;
+  return def.promise;
 }
-

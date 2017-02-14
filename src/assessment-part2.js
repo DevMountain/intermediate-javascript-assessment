@@ -15,7 +15,13 @@ var two = 'don\'t touch this string, either!';
     return $http({
       method: 'GET',
       url: '/api/users'
-    }) //Code here:
+    }).then(function(response) {
+      one = response.data[0];
+      return response;
+    }).then(function(response) {
+      two = response.data[2];
+      return response.data[9];
+    });
 
   }
 //PROBLEM 2 (Context)
@@ -38,7 +44,7 @@ function large() {
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // Code here:
-var boundToElephant;
+var boundToElephant = large.bind(elephant);
 
 
 
@@ -49,7 +55,9 @@ var boundToElephant;
 //Write a function called deathStar. deathStar will take in two parameters, capacity (function) and crew (object). Use explicit binding to give capacity the context of crew.
 
 //Code here:
-
+function deathStar(capacity, crew) {
+  return capacity.bind(crew);
+}
 
 
 
@@ -64,7 +72,11 @@ var boundToElephant;
 //Create a function called accountingOffice. This function will take in a parameter called assets and return a function called accountant. accountant will take in a parameter called liabilities and return assets added to liabilities.
 
 //Code here:
-
+function accountingOffice(assets) {
+  return function accountant(liabilities) {
+    return assets + liabilities
+  }
+}
 
 
 
@@ -88,7 +100,16 @@ var boundToElephant;
 // };
 
 //code here:
-
+function forgetter(name) {
+  var remembers = {
+    name: name,
+    remember: []
+  };
+  return function rememberall(item) {
+    remembers.remember.push(item)
+    return remembers;
+  }
+}
 
 
 
@@ -121,3 +142,26 @@ var boundToElephant;
 //NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 //Code here:
+function frodo(hunger, danger) {
+  var hobbit = {
+    hunger,
+    danger
+  };
+
+  return {
+    dinnerOverFire: function() {
+      if (hobbit.hunger <= 25) hobbit.hunger = 0;
+      else hobbit.hunger -= 25;
+      if (hobbit.danger >= 60) hobbit.danger = 100;
+      else hobbit.danger += 40;
+      return hobbit;
+    },
+    hidingInBush: function() {
+      if (hobbit.hunger >= 65) hobbit.hunger = 100;
+      else hobbit.hunger += 35;
+      if (hobbit.danger <= 20) hobbit.danger = 0;
+      else hobbit.danger -= 20;
+      return hobbit;
+    }
+  }
+}
