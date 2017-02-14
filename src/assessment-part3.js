@@ -6,13 +6,6 @@
 // with the context of the animal, and 'Trogdor' as a parameter.
 
 // CODE HERE...
-function callBinding(animals, update, id) {
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].id === id) {
-      return update.call(animals[i], 'Trogdor');
-    }
-  }
-}
 
 
 // PROBLEM 13 (Explicit Binding)
@@ -23,13 +16,6 @@ function callBinding(animals, update, id) {
 // with the context of the animal, and ['being majestic', 'eating rainbows'] as a parameter.
 
 // CODE HERE...
-function applyBinding(animals, update, id) {
-  for (var i = 0; i < animals.length; i++) {
-    if (animals[i].id === id) {
-      return update.apply(animals[i], ['being majestic', 'eating rainbows']);
-    }
-  }
-}
 
 
 // PROBLEM 14 (Custom Promises) - :NOTE $q is an injected library that works like the angular one
@@ -41,16 +27,6 @@ function applyBinding(animals, update, id) {
 
 var foo;
 // CODE HERE...
-function promiseMe($q) {
-  var def = $q.defer();
-
-  setTimeout(function() {
-    foo = 'bar';
-    def.resolve(foo)
-  }, 1);
-
-  return def.promise;
-}
 
 
 // PROBLEM 15 (Custom Promises) - :NOTE $http is a function created to simulate the angular $http.
@@ -63,19 +39,3 @@ function promiseMe($q) {
 // and then pass the array as you complete your promise.
 
 // CODE HERE...
-function emailList($q, $http) {
-  var def = $q.defer();
-
-  $http({
-    method: 'GET',
-    url: '/api/users'
-  }).then(function(response) {
-    var emails = [];
-    for (var i = 0; i < response.data.length; i++) {
-      emails.push(response.data[i].email);
-    }
-    def.resolve(emails);
-  });
-
-  return def.promise;
-}
