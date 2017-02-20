@@ -91,7 +91,7 @@ describe('Part 1:', function(){
       expect(methodWorkingFine).toBe(true);
     })
   })
-  describe('Mustang', function(){
+  describe('mustang', function(){
     it('should be an object', function(){
       expect(mustang).toEqual(jasmine.any(Object));
     })
@@ -112,7 +112,7 @@ describe('Part 1:', function(){
       expect(enoughGasLeft).toEqual(true)
     })
   })
-  describe('Charger', function(){
+  describe('charger', function(){
     it('should be an object', function(){
       expect(charger).toEqual(jasmine.any(Object));
     })
@@ -140,19 +140,19 @@ describe('Part 1:', function(){
     })
     it("Should Return Strangely-Capitalized Strings That Offend The Internet", function(){
       var loudNoises = "THE VOLUME OF MY STRING IS TURNED TO ELEVEN".grammarPolice()
-      var earsBleeding = true
+      var capString = true
       if(loudNoises === "The Volume Of My String Is Turned To Eleven"){
-        earsBleeding = false;
+        capString = false;
       }
-      expect(earsBleeding).toBe(false)
+      expect(capString).toBe(false)
     })
-    it("sh0u1d b3 0k w1th numb3r5 4nd punctu4t10n!", function(){
-      var theGogglesDoNothing = "lOUD nOISES aLSO tESTING nUMBERS 777 U w0T m8!! !".grammarPolice()
-      var lessOffensive = false
-      if(theGogglesDoNothing === "Loud Noises Also Testing Numbers 777 U W0t M8!! !"){
-        lessOffensive = true
+    it("should function when passed in numbers and punctuation", function(){
+      var numberTester = "t3StInG nUmB3Rs 777... !".grammarPolice()
+      var formattedString = false
+      if(numberTester === "T3sting Numb3rs 777... !"){
+        formattedString = true
       }
-      expect(lessOffensive).toBe(true)
+      expect(formattedString).toBe(true)
     })
   })
 
@@ -183,6 +183,9 @@ describe('Part 1:', function(){
   describe("promiseCatcher", function(){
     it("should be a function", function(){
       expect(promiseCatcher).toEqual(jasmine.any(Function))
+    })
+    it("should not change the value of theAnswer before the promise is resolved", function(){
+      expect(theAnswer).toEqual("Unknown")
     })
     it("should catch a promise, then set its value to 'theAnswer'", function(done){
       
