@@ -80,8 +80,19 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // Create 2 new Vehicles with the constructor function you made: one called "charger", the other called "mustang".  Using implicit context, invoke the drive method on "charger" once, and invoke it twice on "mustang".
 
 // Code here
+  function Vehicle() {
+    this.gasLeft = 100;
+  }
+  Vehicle.prototype.drive = function() {
+    this.gasLeft = this.gasLeft - 25;
+  }
 
+  var charger = new Vehicle();
+  var mustang = new Vehicle();
 
+  charger.drive()
+  mustang.drive()
+  mustang.drive()
 // -----------------------------------------------------------------------------
 
 // **
@@ -92,6 +103,24 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // Your method may be passed punctuation, numbers or other non-letter characters and should neither modify them nor break when encountering them.
 
 // Code Here
+
+String.prototype.grammarPolice = function() {
+
+  var str = this.split(' ');
+  console.log('nope', str);
+  for (var i = 0; i < str.length; i++) {
+    var splitStr = str[i].split('');
+    for (var i = 0; i < splitStr.length; i++) {
+      if(i === 0) {
+        
+      }
+    }
+  }
+
+
+
+
+}
 
 
 // -----------------------------------------------------------------------------
@@ -122,4 +151,3 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 var theAnswer = "Unknown"
 
 // Code Here
-

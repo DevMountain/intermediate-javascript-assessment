@@ -132,7 +132,7 @@ describe('Part 1:', function(){
       }
       expect(enoughGasLeft).toBe(true)
     })
-  })  
+  })
 
   describe("grammarPolice", function(){
     it("should be a method on the String prototype", function(){
@@ -188,7 +188,7 @@ describe('Part 1:', function(){
       expect(theAnswer).toEqual("Unknown")
     })
     it("should catch a promise, then set its value to 'theAnswer'", function(done){
-      
+
       function deepThought ($q){
         var deferred = $q.defer();
         setTimeout(function(){
@@ -197,7 +197,7 @@ describe('Part 1:', function(){
         }, 200);
         return deferred.promise
       }
-      
+
       promiseCatcher(deepThought($q))
 
         setTimeout(function(){
