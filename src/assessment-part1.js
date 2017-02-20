@@ -81,7 +81,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // the other called "mustang".  Using implicit context, invoke the drive method on 
 // "charger" once, and invoke it twice on "mustang".
 
-// Code here
+// CODE HERE...
 
 
 
@@ -98,7 +98,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // Your method may be passed punctuation, numbers or other non-letter characters 
 // and should neither modify them nor break when encountering them.
 
-// Code Here
+// CODE HERE...
 
 
 
@@ -116,7 +116,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // In all other cases, return "Different values"
 
-// Code Here
+// CODE HERE...
 
 
 
@@ -131,5 +131,5 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 var theAnswer = "Unknown"
 
-// Code Here
+// CODE HERE...
 
