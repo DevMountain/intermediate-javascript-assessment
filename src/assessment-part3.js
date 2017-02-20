@@ -53,8 +53,7 @@ var foo;
 // For this question, you are asked to make a function called 'emailList'.
 // This function will take in 2 parameters:
 // $q (Custom promise object), $http (Custom request function).
-// Set up your custom promise, Then make a request using $http.
-// GET '/api/users'
+// Set up your custom promise, then make a GET request using $http to '/api/users'.
 // Make an array of emails from the returned data,
 // and then pass the array as you complete your promise.
 
