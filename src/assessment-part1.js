@@ -57,12 +57,12 @@ var fairyTale2 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 var fairyTale3 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
-// Which functions access the "sleepy" variable and get undefined
+// Which function(s) access the "sleepy" variable and get undefined
 // (Delete wrong answers, leave correct ones)
 
 var fairyTale4 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
-// Which functions access the isFurry variable and get true
+// Which function(s) access the isFurry variable and get true
 // (Delete wrong answers, leave correct ones)
 
 var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
@@ -117,7 +117,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // PROBLEM 5
 // **
 
-// Write a function called "promiseCatcher" that will take in a promise, passed in by Jasmine through your function's parameters.  Your function will need to catch that promise, then set the global variable 'theAnswer' equal to the result of the promise.
+// Write a function called "promiseCatcher" that will take in a promise, passed in by Jasmine through your function's parameters.  Your function will need to catch that promise, then set the global variable 'theAnswer' equal to the result of the promise whenever you receive the data.
 
 var theAnswer = "Unknown";
 
