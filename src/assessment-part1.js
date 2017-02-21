@@ -70,15 +70,15 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // * PROBLEM 2 *
 // *************
 
-// Write a constructor function called Vehicle.  Vehicle should have a property 
+// Write a constructor function called Vehicle.  Vehicle should have a property
 // called gasLeft that is equal to 100.
 
-// Next, assign a function called drive to the Vehicle prototype.  When invoked, 
-// drive should subtract 25 from the gasLeft property of any Vehicle your constructor 
+// Next, assign a function called drive to the Vehicle prototype.  When invoked,
+// drive should subtract 25 from the gasLeft property of any Vehicle your constructor
 // function creates.
 
-// Create 2 new Vehicles with the constructor function you made: one called "charger", 
-// the other called "mustang".  Using implicit context, invoke the drive method on 
+// Create 2 new Vehicles with the constructor function you made: one called "charger",
+// the other called "mustang".  Using implicit context, invoke the drive method on
 // "charger" once, and invoke it twice on "mustang".
 
 // CODE HERE...
@@ -90,12 +90,12 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // *************
 
 // For this problem, you will need to add a method to the String prototype named
-// "grammarPolice".  When called on a string, "grammarPolice" will capitalize the 
-// first letter of every word, while reverting the remainder of each word to lowercase. 
+// "grammarPolice".  When called on a string, "grammarPolice" will capitalize the
+// first letter of every word, while reverting the remainder of each word to lowercase.
 
 // For example: "OH HELLO THERE" becomes "Oh Hello There"
 
-// Your method may be passed punctuation, numbers or other non-letter characters 
+// Your method may be passed punctuation, numbers or other non-letter characters
 // and should neither modify them nor break when encountering them.
 
 // CODE HERE...
@@ -106,8 +106,8 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // * PROBLEM 4 *
 // *************
 
-// Write a function called valueType that has two parameters. Jasmine will pass 
-// arguments into your function through the parameters.  Your function will need 
+// Write a function called valueType that has two parameters. Jasmine will pass
+// arguments into your function through the parameters.  Your function will need
 // to compare the passed-in values and return a string based on that comparison, as follows:
 
 // If the arguments are of the same type and have the same value, return "Exactly the same"
@@ -124,12 +124,11 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // * PROBLEM 5 *
 // *************
 
-// Write a function called "promiseCatcher" with a single parameter. Jasmine will
-// pass a promise into your function through that parameter.  Your function will 
-// need to catch that promise, then set the global variable 'theAnswer' equal to 
-// the result of the promise whenever you receive the data.
+// Write a function called "promiseCatcher" with a single parameter.
+// Jasmine will pass a promise into your function through that parameter.
+// Your function will need to catch that promise, then set the global variable 'theAnswer'
+// equal to the result of the promise whenever you receive the data.
 
-var theAnswer = "Unknown"
+var theAnswer = "Unknown";
 
 // CODE HERE...
-
