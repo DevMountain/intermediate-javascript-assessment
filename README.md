@@ -1,7 +1,7 @@
 Intermediate Javascript Assessment
 =========
 
-For this assessment, you are required to answer the questions in the src files (start with assessment-part1.js). To check if your answers are correct, open the index.html and look for green check marks.
+For this assessment, you are required to answer the questions in the src files (start with assessment-part1.js). To check if your answers are correct, open the index.html and look for green dots.
 
 ## Copyright
 
