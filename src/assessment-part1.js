@@ -110,11 +110,15 @@ String.prototype.grammarPolice = function() {
   console.log('nope', str);
   for (var i = 0; i < str.length; i++) {
     var splitStr = str[i].split('');
-    for (var i = 0; i < splitStr.length; i++) {
-      if(i === 0) {
-        
-      }
+    for (var j = 0; j < splitStr.length; j++) {
+      if(j === 0) {
+        splitStr[j] = splitStr[j].toUpperCase()
+      } else (
+        splitStr[j] = splitStr[j].toLowerCase()
+      )
+
     }
+    console.log(splitStr);
   }
 
 
