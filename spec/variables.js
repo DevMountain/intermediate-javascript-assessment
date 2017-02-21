@@ -108,7 +108,7 @@ $http.get = function(url) {
 
 	setTimeout(function() {
 		defered.resolve({data: users});
-	}, 1000);
+	}, 0);
 
 	return defered.promise;
 };

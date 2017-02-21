@@ -19,6 +19,19 @@ describe('Part 2:', function() {
 
   })
 
+  describe('Horton', function() {
+
+    it('explicit binding used', function() {
+      expect(large()).toEqual('My name is  and I am very heavy!')
+      expect(large.bind(elephant) + '').toEqual(boundToElephant + '')
+    })
+
+    it('boundToElephant should return correct string', function() {
+      expect(boundToElephant()).toEqual('My name is Horton and I am very heavy!')
+    })
+
+  })
+
   describe('Deathstar', function() {
 
     it('should exist', function() {
@@ -37,19 +50,6 @@ describe('Part 2:', function() {
       expect(crewPop()).toEqual(jasmine.any(Object))
     })
 
-
-  })
-
-  describe('Horton', function() {
-
-    it('explicit binding used', function() {
-      expect(large()).toEqual('My name is  and I am very heavy!')
-      expect(large.bind(elephant) + '').toEqual(boundToElephant + '')
-    })
-
-    it('boundToElephant should return correct string', function() {
-      expect(boundToElephant()).toEqual('My name is Horton and I am very heavy!')
-    })
 
   })
 
