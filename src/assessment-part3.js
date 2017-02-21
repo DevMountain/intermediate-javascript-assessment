@@ -33,7 +33,7 @@
 // * PROBLEM 3 *
 // *************
 
-//:NOTE $q is an injected library that works like angular's $q object.
+// NOTE: $q is an injected library that works like angular's $q object.
 // For this question, you are asked to make a function called 'promiseMe'.
 // This function will take in 1 parameter:
 // $q (Custom promise object).
@@ -44,12 +44,11 @@ var foo;
 // CODE HERE...
 
 
-
 // *************
 // * PROBLEM 4 *
 // *************
 
-// :NOTE $http is a function created to simulate the angular $http.
+// NOTE: $http is a function created to simulate the angular $http.
 // For this question, you are asked to make a function called 'emailList'.
 // This function will take in 2 parameters:
 // $q (Custom promise object), $http (Custom request function).
