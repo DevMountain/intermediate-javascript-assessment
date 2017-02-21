@@ -71,10 +71,10 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // *************
 
 // Write a constructor function called Vehicle.  Vehicle should have a property
-// called gasLeft that is equal to 100.
+// called gasRemaining that is equal to 100.
 
 // Next, assign a function called drive to the Vehicle prototype.  When invoked,
-// drive should subtract 25 from the gasLeft property of any Vehicle your constructor
+// drive should subtract 25 from the gasRemaining property of any Vehicle your constructor
 // function creates.
 
 // Create 2 new Vehicles with the constructor function you made: one called "charger",
@@ -134,9 +134,8 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 // Write a function called "promiseCatcher" with a single parameter.
 // Jasmine will pass a promise into your function through that parameter.
-// Your function will need to catch that promise, then set the global variable 'theAnswer'
-// equal to the result of the promise whenever you receive the data.
-
+// Your function will need to handle that promise.
+// When your promise recieves its results set that result to the variable 'theAnswer' that you see below these instructions.
 
 var theAnswer = "Unknown";
 
