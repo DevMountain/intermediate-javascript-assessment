@@ -10,6 +10,7 @@
 // magicAnimals (Array), updateAnimal (Function), id (Number).
 // Find the animal that matches the given id, then call the function
 // with the context of the animal, and 'Trogdor' as a parameter.
+// Return the result of calling the function with the correct context and parameter.
 
 // CODE HERE...
 
@@ -24,6 +25,7 @@
 // magicAnimals (Array), updateAnimal (Function), id (Number).
 // Find the animal that matches the given id, then call the function
 // with the context of the animal, and the array ['being majestic', 'eating rainbows'] as a parameter.
+// Return the result of calling the function with the correct context and parameter.
 
 // CODE HERE...
 
