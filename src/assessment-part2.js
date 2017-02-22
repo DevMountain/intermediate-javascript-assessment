@@ -96,7 +96,7 @@ function large() {
 // name (String).
 
 // forgetter helps keep track of things people don't want to forget.
-// This function needs to return a function called rememberall.
+// forgetter needs to return a function called rememberall.
 // rememberall takes in a parameter:
 // item (String).
 
@@ -105,7 +105,7 @@ function large() {
 // rememberall then needs to return an object with the following format:
 
 // {
-//     name: << name of person, example: Neville >>,
+//     name: << name (given parameter) >>,
 //     remember: << array of items to be remembered >>
 // };
 

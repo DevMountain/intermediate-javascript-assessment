@@ -71,7 +71,7 @@ describe('Part 1:', function(){
     })
     it('should have the correct property and value', function(){
       var lambo = new Vehicle()
-      if(lambo.gasLeft === 100){
+      if(lambo.gasRemaining === 100){
         var propertyChecker = true;
       }
       expect(propertyChecker).toBe(true);
@@ -82,10 +82,10 @@ describe('Part 1:', function(){
       var prototypeMethod = Vehicle.prototype.drive
       expect(prototypeMethod).toEqual(jasmine.any(Function));
     })
-    it('should subtract the correct amount from gasLeft', function(){
+    it('should subtract the correct amount from gasRemaining', function(){
       var corvette = new Vehicle()
       corvette.drive()
-      if(corvette.gasLeft === 75){
+      if(corvette.gasRemaining === 75){
         var methodWorkingFine = true
       }
       expect(methodWorkingFine).toBe(true);
@@ -96,20 +96,20 @@ describe('Part 1:', function(){
       expect(mustang).toEqual(jasmine.any(Object));
     })
     it('should have a working drive method', function(){
-      var gasInTank = mustang.gasLeft
+      var gasInTank = mustang.gasRemaining
       mustang.drive()
       var couldDriveIt = false
-      if(mustang.gasLeft === gasInTank - 25){
+      if(mustang.gasRemaining === gasInTank - 25){
         couldDriveIt = true
       }
       expect(couldDriveIt).toBe(true)
     })
     it('should have the right amount of gas', function(){
-      var enoughGasLeft = false
-      if(mustang.gasLeft === 25){
-        enoughGasLeft = true;
+      var enoughgasRemaining = false
+      if(mustang.gasRemaining === 25){
+        enoughgasRemaining = true;
       }
-      expect(enoughGasLeft).toEqual(true)
+      expect(enoughgasRemaining).toEqual(true)
     })
   })
   describe('charger', function(){
@@ -117,22 +117,22 @@ describe('Part 1:', function(){
       expect(charger).toEqual(jasmine.any(Object));
     })
     it('should have a working drive method', function(){
-      var gasInTank = charger.gasLeft
+      var gasInTank = charger.gasRemaining
       charger.drive()
       var couldDriveIt = false
-      if(charger.gasLeft === gasInTank - 25){
+      if(charger.gasRemaining === gasInTank - 25){
         couldDriveIt = true
       }
       expect(couldDriveIt).toBe(true)
     })
     it('should have the right amount of gas', function(){
-      var enoughGasLeft = false
-      if(charger.gasLeft === 50){
-        enoughGasLeft = true;
+      var enoughgasRemaining = false
+      if(charger.gasRemaining === 50){
+        enoughgasRemaining = true;
       }
-      expect(enoughGasLeft).toBe(true)
+      expect(enoughgasRemaining).toBe(true)
     })
-  })  
+  })
 
   describe("grammarPolice", function(){
     it("should be a method on the String prototype", function(){
@@ -188,7 +188,7 @@ describe('Part 1:', function(){
       expect(theAnswer).toEqual("Unknown")
     })
     it("should catch a promise, then set its value to 'theAnswer'", function(done){
-      
+
       function deepThought ($q){
         var deferred = $q.defer();
         setTimeout(function(){
@@ -197,7 +197,7 @@ describe('Part 1:', function(){
         }, 200);
         return deferred.promise
       }
-      
+
       promiseCatcher(deepThought($q))
 
         setTimeout(function(){
