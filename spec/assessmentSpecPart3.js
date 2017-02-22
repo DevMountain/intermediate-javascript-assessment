@@ -82,7 +82,7 @@ describe('Part 3:', function() {
 		  var promise = promiseMe($q);
 			promise
 				.then(function(response) {
-					expect(foo)
+					expect(response)
 						.toEqual('bar');
 					done();
 				});
