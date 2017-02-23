@@ -9,6 +9,13 @@
 // Under the variables is a function called noWeakLink.
 // noWeakLink uses $http to make a "GET" request to /api/users.
 // You must use two .then functions to handle the response object.
+// Chain these functions off of $http (do not put them in variables)
+// The response object will look like this :
+/* 
+    {
+      data: []
+    }
+*/
 
 // In the first .then function you use, assign the first user object (located in the response object)
 // to the variable 'one' (previously declared).
@@ -21,14 +28,14 @@ var two = 'don\'t touch this string, either!';
 
 function noWeakLink() {
 
-  return $http({
+  var promise = $http({
     method: 'GET',
     url: '/api/users'
   })
   // CODE HERE...
 
 
-
+  return promise;
 }
 
 
@@ -37,17 +44,17 @@ function noWeakLink() {
 // * PROBLEM 2 *
 // *************
 
-// Below is a vaiable called elephant which has been assigned the value of an
-// object with one key/value pair.
+// Below is a vaiable called elephant which has been assigned an
+// object with a name.
 
 // Function large currently returns the following:
 // 'My name is ' + this.name + ' and I am very heavy!'
 
-// You must use explicit binding. In the variable called boundToElephant,
+// You must use explicit binding. In a variable called boundToElephant,
 // assign it the value of the large function BOUND to the elephant object.
 
 // When boundToElephant gets called, it should return this exact string:
-// 'My name is Horton and I am very heavy!'
+// 'My name is Horton and I am very heavy!' (The above instructions should make this work.  No code needed for this paragraph)
 
 var elephant = {
   name: 'Horton'
@@ -80,9 +87,9 @@ function large() {
 // Create a function called accountingOffice.
 // accountingOffice will take in a parameter:
 // assets (Number),
-// then return a function that will take in a parameter:
-// liabilities (Number).
-// This function will return assets added to liabilities.
+// then return a closure function:
+// The closure function will take in a parameter: liabilities (Number)
+// The closure function will returns the combined value of assets and liabilities.
 
 // CODE HERE...
 
@@ -119,11 +126,9 @@ function large() {
 
 // Create a function called frodo. frodo will take in two parameters:
 // startingHungerValue (Number) and startingDangerValue (Number).
+// frodo will need to store those values on internal variables.
 
-// frodo will have two local variables called hunger and danger.
-// Assign those variables the corresponding parameters.
-// frodo will then return an object with two methods.
-
+// frodo will then return an object with two methods:
 // The first method will be called dinnerOverFire.
 // dinnerOverFire will decrease hunger by 25 and will increase danger by 40.
 
