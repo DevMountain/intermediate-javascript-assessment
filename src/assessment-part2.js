@@ -13,18 +13,27 @@
 // The response object will look like this :
 /* 
     {
-      data: []
+      data: [
+        {
+		 email: "awilliams0@intel.com",
+		 first_name: "Alan",
+		 gender: "Male",
+		 id: 1,
+		 last_name: "Williams"
+        },
+        { //...
+      ]
     }
 */
 
 // In the first .then function you use, assign the first user object (located in the response object)
-// to the variable 'one' (previously declared).
+// to the variable 'firstUser' (previously declared).
 
 // In the second .then function you use, assign the third user object
-// to the variable 'two' (previously declared) and then return the tenth user object.
+// to the variable 'thirdUser' (previously declared) and then return the tenth user object.
 
-var one = 'don\'t touch this string!';
-var two = 'don\'t touch this string, either!';
+var firstUser = 'don\'t touch this string!';
+var thirdUser = 'don\'t touch this string, either!';
 
 function noWeakLink() {
 
@@ -44,7 +53,7 @@ function noWeakLink() {
 // * PROBLEM 2 *
 // *************
 
-// Below is a vaiable called elephant which has been assigned an
+// Below is a variable called elephant which has been assigned an
 // object with a name.
 
 // Function large currently returns the following:

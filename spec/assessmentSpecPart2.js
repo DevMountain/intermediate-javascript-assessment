@@ -2,16 +2,16 @@ describe('Part 2:', function() {
 
   describe('No weak link', function() {
 
-    it('one and two are unchanged before function call', function() {
-      expect(one).toEqual('don\'t touch this string!');
-      expect(two).toEqual('don\'t touch this string, either!');
+    it('firstUser and thirdUser are unchanged before function call', function() {
+      expect(firstUser).toEqual('don\'t touch this string!');
+      expect(thirdUser).toEqual('don\'t touch this string, either!');
     })
 
     it('should change variable values', function(done) {
 
       noWeakLink().then(function(res) {
-        expect(one.id).toEqual(users[0].id)
-        expect(two.id).toEqual(users[2].id)
+        expect(firstUser.id).toEqual(users[0].id)
+        expect(thirdUser.id).toEqual(users[2].id)
         expect(res).toEqual(users[9]);
         done();
       })
