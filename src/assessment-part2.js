@@ -13,7 +13,16 @@
 // The response object will look like this :
 /* 
     {
-      data: []
+      data: [
+        {
+		 email: "awilliams0@intel.com",
+		 first_name: "Alan",
+		 gender: "Male",
+		 id: 1,
+		 last_name: "Williams"
+        },
+        { //...
+      ]
     }
 */
 
