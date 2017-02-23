@@ -136,7 +136,7 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 // Write a function called "promiseCatcher" with a single parameter.
 // Jasmine will pass a promise into your function through that parameter.
 // Your function will need to handle that promise.
-// When your promise recieves its results, set variable 'theAnswer' (seen below) equal to the result.
+// When your promise receives its results, set variable 'theAnswer' (seen below) equal to the result.
 
 var theAnswer = "Unknown";
 
