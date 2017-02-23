@@ -95,8 +95,9 @@ var fairyTale5 = ["daBears", "papaBear", "mamaBear", "babyBear", "goldilocks"];
 
 
 // For this problem, you will need to add a method to the String prototype named
-// "grammarPolice".  When called on a string, "grammarPolice" will capitalize the
-// first letter of every word, while reverting the remainder of each word to lowercase.
+// "grammarPolice".  When called on a string, "grammarPolice" will return a new string
+//  where the first letter of every word is capitalized, while reverting the remainder
+// of each word to lowercase.
 
 // For example: "OH HELLO THERE" becomes "Oh Hello There"
 
