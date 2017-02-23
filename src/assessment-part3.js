@@ -37,8 +37,9 @@
 // For this question, you are asked to make a function called 'promiseMe'.
 // This function will take in 1 parameter:
 // $q (Custom promise object).
-// In your function, create a custom promise, then in a timeout, update the variable foo (seen below)
-// to equal 'bar' and complete your promise.
+// In your function, create a custom promise, then in a timeout,
+// update the variable foo (seen below) to equal 'bar'.
+// Once that is complete, resolve your promise and return the variable foo.
 
 var foo;
 // CODE HERE...
