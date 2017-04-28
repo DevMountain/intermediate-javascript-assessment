@@ -5,29 +5,31 @@
 // * PROBLEM 1 *
 // *************
 
-// Below are two variables (one and two).
+// Below are two variables (firstUser and thirdUser).
 // Under the variables is a function called noWeakLink.
 // noWeakLink uses $http to make a "GET" request to /api/users.
 // You must use two .then functions to handle the response object.
 // Chain these functions off of $http (do not put them in variables)
 // The response object will look like this :
-/* 
+/*
     {
       data: [
         {
-		 email: "awilliams0@intel.com",
-		 first_name: "Alan",
-		 gender: "Male",
-		 id: 1,
-		 last_name: "Williams"
+      		email: "awilliams0@intel.com",
+      		first_name: "Alan",
+      		gender: "Male",
+      		id: 1,
+      		last_name: "Williams"
         },
-        { //...
+        {
+          //...
+        }
       ]
     }
 */
 
 // In the first .then function you use, assign the first user object (located in the response object)
-// to the variable 'firstUser' (previously declared).
+// to the variable 'firstUser' (previously declared), then return the response object.
 
 // In the second .then function you use, assign the third user object
 // to the variable 'thirdUser' (previously declared) and then return the tenth user object.
@@ -37,14 +39,12 @@ var thirdUser = 'don\'t touch this string, either!';
 
 function noWeakLink() {
 
-  var promise = $http({
+  return $http({
     method: 'GET',
     url: '/api/users'
   })
   // CODE HERE...
 
-
-  return promise;
 }
 
 
@@ -59,7 +59,8 @@ function noWeakLink() {
 // Function large currently returns the following:
 // 'My name is ' + this.name + ' and I am very heavy!'
 
-// You must use explicit binding. In a variable called boundToElephant,
+// You must use explicit binding.
+// In a variable called boundToElephant,
 // assign it the value of the large function BOUND to the elephant object.
 
 // When boundToElephant gets called, it should return this exact string:
@@ -83,7 +84,8 @@ function large() {
 // Write a function called deathStar.
 // deathStar will take in two parameters:
 // capacity (Function) and crew (object).
-// Use explicit binding to give capacity the context of crew and return the result.
+// Use explicit binding to give capacity the context of crew
+// and return the bound function.
 
 // CODE HERE...
 
@@ -98,7 +100,7 @@ function large() {
 // assets (Number),
 // then return a closure function:
 // The closure function will take in a parameter: liabilities (Number)
-// The closure function will returns the combined value of assets and liabilities.
+// The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
 
