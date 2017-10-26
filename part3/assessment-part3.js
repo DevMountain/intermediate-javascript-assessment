@@ -109,20 +109,3 @@ function emailList($q, $http) {
     return emailArray
 }
 
-// const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-// wait(10000).then(() => saySomething("10 seconds")).catch(failureCallback);
-
-// function asyncGreet(name) {
-//     // perform some asynchronous operation, resolve or reject the promise when appropriate.
-//     return $q(function(resolve, reject) {
-//       setTimeout(function() {
-//         if (okToGreet(name)) {
-//           resolve('Hello, ' + name + '!');
-//         } else {
-//           reject('Greeting ' + name + ' is not allowed.');
-//         }
-//       }, 1000);
-//     });
-//   }
-
