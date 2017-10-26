@@ -13,7 +13,17 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
-
+function callBinding(magicAnimals, updateAnimal, id) {
+    let result;
+    magicAnimals.map((animal) => {
+        if (animal.id === id) {
+            result = updateAnimal.call(animal, 'Trogdor')
+        }
+    })
+    // console.log(result)
+    return result
+}
+//Call has multiple parameters yo
 
 
 // *************
@@ -28,6 +38,14 @@
 // return the result of your updateAnimal invocation
 
 // CODE HERE...
+function applyBinding(magicAnimals, updateAnimal, id) {
+    magicAnimals.map((animal) => {
+        if (animal.id === id) {
+            result = updateAnimal.apply(animal, ['being majestic', 'eating rainbows'])
+        }
+    })
+    return result;
+}
 
 
 
@@ -48,6 +66,18 @@
 var foo;
 
 // CODE HERE...
+function promiseMe($q) {
+    // varChanger = function(str){
+    //     foo = str
+    // }
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve("bar")
+        }
+            , 20)
+
+    })
+}
 
 
 
@@ -64,3 +94,18 @@ var foo;
 // and then resolve the array as you complete your promise.
 
 // CODE HERE...
+function emailList($q, $http) {
+    var emailArray = []
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            return $http.get('/api/users').then(res => {
+                // console.log(res)
+                res.data.map(thing => { emailArray.push(thing.email) })
+                console.log(emailArray)
+                resolve(emailArray)
+            })
+        }, 20)
+    })
+    return emailArray
+}
+
