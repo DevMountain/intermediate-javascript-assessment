@@ -43,10 +43,20 @@ function noWeakLink() {
     method: 'GET',
     url: '/api/users'
   })
-  // CODE HERE...
-
+    // CODE HERE...
+    .then((res) => {
+      console.log(res)
+      firstUser = res.data[0]
+      console.log(firstUser);
+      return res;
+    })
+    .then((res) => {
+      console.log(res.data)
+      thirdUser = res.data[2]
+      console.log(thirdUser)
+      return res.data[9];
+    })
 }
-
 
 
 // *************
@@ -74,8 +84,8 @@ function large() {
   return 'My name is ' + this.name + ' and I am very heavy!'
 }
 // CODE HERE...
-
-
+var boundToElephant = large.bind(elephant);
+console.log(boundToElephant)
 
 // *************
 // * PROBLEM 3 *
@@ -88,7 +98,10 @@ function large() {
 // and return the bound function.
 
 // CODE HERE...
+function deathStar(capacity, crew) {
 
+  return capacity.bind(crew)
+}
 
 
 // *************
@@ -103,7 +116,13 @@ function large() {
 // The closure function will return the combined value of assets and liabilities.
 
 // CODE HERE...
+function accountingOffice(assets) {
 
+
+  return function closure(liabilities) {
+    return liabilities + assets
+  }
+}
 
 
 // *************
@@ -129,6 +148,20 @@ function large() {
 
 // CODE HERE...
 
+function forgetter(name) {
+
+  let thingsToRemember = []
+
+  return function rememberall(item) {
+
+    thingsToRemember.push(item)
+    console.log(thingsToRemember)
+    return obj = {
+      name: name,
+      remember: thingsToRemember
+    }
+  }
+}
 
 
 // *************
@@ -156,3 +189,34 @@ function large() {
 // NOTE: Neither hunger nor danger should be able to exceed 100 or drop below 0.
 
 // CODE HERE...
+function frodo(startingHungerValue, startingDangerValue) {
+  console.log("startingHungerValue", startingHungerValue, "startingDangerValue", startingDangerValue)
+  
+  let hunger = startingHungerValue;
+  let danger = startingDangerValue;
+
+  return {
+      dinnerOverFire: function () {
+        // console.log("dinnerOverFire pre changes:", "hunger:", hunger, "danger:", danger)
+        // console.log(hunger - 25)
+        hunger = (hunger - 25 <= 0) ? 0 : hunger -= 25;
+        danger = (danger + 40 > 100) ? 100 : danger+= 40;
+        // console.log("dinnerOverFire post changes:",  "hunger:", hunger, "danger:", danger)
+        return {
+          hunger: hunger,
+          danger: danger
+        }
+      },
+      hidingInBush: function () {
+        console.log("hidingInBush pre changes:", "hunger:", hunger, "danger:", danger)
+        hunger = (hunger + 35 > 100) ? 100 : hunger += 35;
+        danger = (danger - 20 < 0) ? 0 : danger -= 20;
+        console.log("hidingInBush post changes:", "hunger:", hunger, "danger:", danger)
+        return {
+          hunger: hunger,
+          danger: danger
+        }     
+      }
+  }
+}
+
