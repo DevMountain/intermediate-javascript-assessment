@@ -73,10 +73,6 @@ var fairyTale5 = ["daBears", "goldilocks"];
 // Write a constructor function called Vehicle.  Vehicle should have a property
 // called gasRemaining that is equal to 100.
 
-constructor Vehicle() {
-  gasRemaining: 100
-}
-
 // Next, assign a function called drive to the Vehicle prototype.  When invoked,
 // drive should subtract 25 from the gasRemaining property of any Vehicle your constructor
 // function creates.
