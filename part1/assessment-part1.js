@@ -126,7 +126,13 @@ corvette.drive();
 
 
 // CODE HERE...
-
+String.prototype.grammarPolice = function() {
+  var arr = this.split('')
+  for (var x = 0; x < arr.length; x++) {
+    arr[x] = arr[x].charAt(0).toUpperCase() + arr[x].slice(1).toLowerCase();
+  }
+  return arr.join(' ');
+}
 
 
 // *************
@@ -144,8 +150,15 @@ corvette.drive();
 // In all other cases, return "Different values"
 
 // CODE HERE...
-
-
+// Jasmine Passing Arguments Through Parameters
+function valueType(param1, param2) {
+  if (param1 === param2) {
+    return "Exactly The Same";
+  } else if (param1 == param2) {
+    return "Same Value Different Types";
+  }
+  return "Different Values";
+}
 
 // *************
 // * PROBLEM 5 *
