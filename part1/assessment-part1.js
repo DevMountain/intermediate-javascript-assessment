@@ -81,11 +81,25 @@ constructor Vehicle() {
 // drive should subtract 25 from the gasRemaining property of any Vehicle your constructor
 // function creates.
 
+var Vehicle = function() {
+  this.gasRemaining = 100;
+
+}
+Vehicle.prototype.drive = function() {
+  this.gasRemaining = this.gasRemaining - 25;
+}
+
 // Create 2 new Vehicles with the constructor function you made: one called "charger",
 // the other called "mustang".  Using implicit context, invoke the drive method on
 // "charger" once, and invoke it twice on "mustang".
 
 // CODE HERE...
+var dodge = new Vehicle();
+var corvette = new Vehicle();
+
+dodge.drive();
+corvette.drive();
+corvette.drive();
 
 
 
